@@ -1,0 +1,8 @@
+body {
+    background-color: lightgrey;
+}
+
+#root {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}

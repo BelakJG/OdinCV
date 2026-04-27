@@ -1,0 +1,11 @@
+form {
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+form .field {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
