@@ -1,8 +1,6 @@
-import "../styles/forms.css";
+export default function GeneralInfo({ handleGeneral }) {
 
-export default function GeneralInfo({ generalTest }) {
-
-    return (<form onSubmit={() => generalTest(event)}>
+    return (<form onSubmit={() => handleGeneral(event)}>
         <div className="field">
             <label htmlFor="firstName">First Name: </label>
             <input type="text" id="firstName" name="firstName"></input>

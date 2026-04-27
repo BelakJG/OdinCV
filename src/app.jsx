@@ -1,18 +1,33 @@
+import { useState } from "react";
 import GeneralInfo from "./components/generalInfo.jsx";
+import Resume from "./components/resume.jsx";
 
 import "./styles/app.css"
+import "./styles/forms.css"
 
 export default function App() {
 
-    const testSubmit = (event) => {
+    const[resume, setResume] = useState({
+        general: {}
+    });
+
+    const generalSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.target);
-        console.log(data);
+        const dataObject = {
+            name: `${data.get("firstName")} ${data.get("lastName")}`,
+            phone: data.get("phone"),
+            email: data.get("email")
+        }
+        setResume({...resume, general: dataObject});
     }
+
     return(<>
         <div id="sidebar">
-            <GeneralInfo generalTest = {testSubmit} />
+            <GeneralInfo handleGeneral = {generalSubmit} />
         </div>
-        <div id="resume"></div>
+        <div id="resume">
+            <Resume resumeData = { resume } />
+        </div>
     </>);
 }
