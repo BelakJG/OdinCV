@@ -4,19 +4,19 @@ export default function EducationInfo({ handleEducation }) {
         <input type="hidden" name="uuID" value={crypto.randomUUID()}></input>
         <div className="field">
             <label htmlFor="school">School Name: </label>
-            <input type="text" id="school" name="school"></input>
+            <input type="text" id="school" name="school" required></input>
         </div>
         <div className="field">
             <label htmlFor="major">Major Studied: </label>
-            <input type="text" id="major" name="major"></input>
+            <input type="text" id="major" name="major" required></input>
         </div>
         <div className="field">
             <label htmlFor="dateFrom">Date From: </label>
-            <input type="date" id="dateFrom" name="dateFrom"></input>
+            <input type="date" id="dateFrom" name="dateFrom" required></input>
         </div>
         <div className="field">
             <label htmlFor="dateTo">Date To: </label>
-            <input type="date" id="dateTo" name="dateTo"></input>
+            <input type="date" id="dateTo" name="dateTo" required></input>
         </div>
         <button type="submit">Add Education</button>
     </form>);
