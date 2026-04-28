@@ -51,11 +51,13 @@ export default function App() {
         const data = event.target;
         const dataObject = {
             id: data.uuID.value,
+            company: data.company.value,
             position: data.position.value,
             responsibilities: data.responsibilities.value,
             dateFrom: data.dateFrom.value,
             dateTo: data.dateTo.value
         }
+        console.log(data.company);
 
         const workIndex = resume.work.findIndex(w => w.id === dataObject.id);
         if (workIndex === -1) {

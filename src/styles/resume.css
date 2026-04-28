@@ -12,3 +12,18 @@
 #educationInfo .school:not(:last-child) {
     border-bottom: 1px solid grey;
 }
+
+#workInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.work {
+    padding: 8px;
+    width: 50%;
+}
+
+#workInfo .work:not(:last-child) {
+    border-bottom: 1px solid grey;
+}

@@ -12,7 +12,9 @@
     align-items: center;
     border-radius: 16px;
     text-align: center;
-    width: 90%;
+    width: 75%;
+    overflow-y: scroll;
+    justify-self: center;
 }
 
 #resume > * {

@@ -9,7 +9,7 @@ export default function WorkInfo({ handleWork }) {
         </div>
         <div className="field">
             <label htmlFor="position">Title of Position: </label>
-            <input type="text" id="position" name="company"></input>
+            <input type="text" id="position" name="position"></input>
         </div>
         <div className="field">
             <label htmlFor="responsibilities">Job Responsibilities:</label>
