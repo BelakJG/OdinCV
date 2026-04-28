@@ -2,6 +2,7 @@ import { useState } from "react";
 import GeneralInfo from "./components/generalInfo.jsx";
 import EducationInfo from "./components/educationInfo.jsx";
 import Resume from "./components/resume.jsx";
+import WorkInfo from "./components/workInfo.jsx";
 
 import "./styles/app.css"
 import "./styles/forms.css"
@@ -10,7 +11,8 @@ export default function App() {
 
     const[resume, setResume] = useState({
         general: {},
-        education: []
+        education: [],
+        work: []
     });
 
     const generalSubmit = (event) => {
@@ -44,10 +46,31 @@ export default function App() {
         data.reset();
     }
 
+    const workSubmit = (event) => {
+        event.preventDefault();
+        const data = event.target;
+        const dataObject = {
+            id: data.uuID.value,
+            position: data.position.value,
+            responsibilities: data.responsibilities.value,
+            dateFrom: data.dateFrom.value,
+            dateTo: data.dateTo.value
+        }
+
+        const workIndex = resume.work.findIndex(w => w.id === dataObject.id);
+        if (workIndex === -1) {
+            setResume({...resume, work: [...resume.work, dataObject]});
+        } else {
+            setResume({...resume, work: resume.work.map((entry, index) => index === workIndex ? dataObject : entry)})
+        }
+        data.reset();
+    }
+
     return(<>
         <div id="sidebar">
             <GeneralInfo handleGeneral = {generalSubmit} />
             <EducationInfo handleEducation= {educationSubmit}/>
+            <WorkInfo handleWork = {workSubmit}/>
         </div>
         <div id="resume">
             <Resume resumeData = { resume } />

@@ -1,5 +1,6 @@
 export default function EducationInfo({ handleEducation }) {
-    return(<form onSubmit={() => handleEducation(event)} id="educationForm">
+    return(<form onSubmit={handleEducation} id="educationForm">
+        <h2>Education Info</h2>
         <input type="hidden" name="uuID" value={crypto.randomUUID()}></input>
         <div className="field">
             <label htmlFor="school">School Name: </label>

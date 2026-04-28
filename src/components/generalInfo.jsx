@@ -1,6 +1,7 @@
 export default function GeneralInfo({ handleGeneral }) {
 
     return (<form onSubmit={() => handleGeneral(event)}>
+        <h2>General Info</h2>
         <div className="field">
             <label htmlFor="firstName">First Name: </label>
             <input type="text" id="firstName" name="firstName"></input>
